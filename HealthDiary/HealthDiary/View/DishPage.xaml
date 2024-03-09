@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.DishPage" Title="Информация о блюде">
+    <ContentPage.Content>
+        <Frame StyleId="dish-page">
+            <StackLayout>
+                <Frame StyleClass="header">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Grid.Row="0" Text="Калории"/>
+                        <Label Grid.Column="1" Grid.Row="0" Text="Белки"/>
+                        <Label Grid.Column="2" Grid.Row="0" Text="Жиры"/>
+                        <Label Grid.Column="3" Grid.Row="0" Text="Углеводы"/>
+
+                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding Calories}"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Proteins}"/>
+                        <Label Grid.Column="2" Grid.Row="1" Text="{Binding Fats}"/>
+                        <Label Grid.Column="3" Grid.Row="1" Text="{Binding Carbohydrates}"/>
+                    </Grid>
+                </Frame>
+
+                <ListView ItemsSource="{Binding ProductsInDish}" HasUnevenRows="True" SelectionMode="None">
+                    <ListView.Header>
+                        <StackLayout Style="{DynamicResource dishPageStackLayout}">
+                            <StackLayout>
+                                <Label Text="Наименование:" Style="{DynamicResource label}"/>
+                                <Entry Text="{Binding Name}" Placeholder="Наименование блюда" Keyboard="Chat" Style="{DynamicResource entry}"/>
+                                <Label Text="Ингредиенты" Style="{DynamicResource dishPageLabelCenteredMargined}"/>
+                            </StackLayout>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" Text="Наименование" Style="{DynamicResource dishPageLabelCentered}"/>
+                                <Label Grid.Column="1" Grid.Row="0" Text="Кол-во" Style="{DynamicResource dishPageLabelCentered}"/>
+                            </Grid>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.Footer>
+                        <StackLayout Style="{DynamicResource dishPageStackLayout}">
+                            <Button Text="Добавить продукт" Command="{Binding AddProduct_cmd}" Style="{DynamicResource dishPageButtonAdd}"/>
+                            <Label Text="Описание:" Style="{DynamicResource label}"/>
+                            <Editor Text="{Binding Comment}" Placeholder="Описание блюда" Keyboard="Chat" Style="{DynamicResource editor}"/>
+                            <Label Text="Кол-во порций в блюде:" Style="{DynamicResource label}"/>
+                            <Entry Text="{Binding Portion}" Placeholder="Кол-во порций в блюде" Keyboard="Numeric" Style="{DynamicResource entry}"/>
+                            
+                            <Grid Style="{DynamicResource dishPageFooterGrid}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Button Grid.Column="0" Grid.Row="0" Text="Сохранить" Command="{Binding SaveDish_cmd}" IsEnabled="{Binding IsConfirmEnabled}" Style="{DynamicResource dishPageButtonFilled}"/>
+                                <Button Grid.Column="1" Grid.Row="0" Text="Удалить" Command="{Binding DeleteDish_cmd}" Style="{DynamicResource dishPageButtonFilled}"/>
+                                <Button Grid.Column="2" Grid.Row="0" Text="Назад" Command="{Binding Back_cmd}" Style="{DynamicResource dishPageButtonBordered}"/>
+                            </Grid>
+                        </StackLayout>
+                    </ListView.Footer>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid Style="{DynamicResource dishPageGrid}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Button Grid.Column="0" Grid.Row="0" Text="{Binding Product.Name}" Command="{Binding ChoiceProduct_cmd}" CommandParameter="{Binding}" Style="{DynamicResource dishPageButtonItem}" StyleClass="itemlist"/>
+                                        <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Amount}" Placeholder="{Binding Product.Unit.Name}" Keyboard="Numeric"/>
+                                        <Button Grid.Column="2" Grid.Row="0" Text="Удалить" Command="{Binding DeleteProduct_cmd}" CommandParameter="{Binding}" Style="{DynamicResource dishPageButtonDeleteItem}" StyleClass="itemlist"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

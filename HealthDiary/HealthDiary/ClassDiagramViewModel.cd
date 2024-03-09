@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HealthDiary.ViewModel.CupListViewModel">
+    <Position X="9" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBACAAAQAAAAAAAAAAAECAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ViewModel\CupListViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedCup" />
+      <Property Name="MainViewModel" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.DishChoiceViewModel">
+    <Position X="4" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAAAgAAAAAAAAAAAQAECIAAAAAAAAAAACAAAgAAAI=</HashCode>
+      <FileName>ViewModel\DishChoiceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainViewModel" />
+      <Property Name="SelectedDish" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Dishes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.DishListViewModel">
+    <Position X="5.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAAAgAAAAAAAAAIAQAEAIAAgAIAAAAAAAAAAhAAAA=</HashCode>
+      <FileName>ViewModel\DishListViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedDish" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Dishes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.DishViewModel">
+    <Position X="8.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YQAAAAAGAAAAgAAAAAQAUJwCIQAAABABAAAAADCEAAA=</HashCode>
+      <FileName>ViewModel\DishViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dish" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Dishes" />
+      <Property Name="ProductsInDish" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.LoginViewModel">
+    <Position X="37.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABAAAAEIAAgBAAAAAgAAAAAAACAAACAAKQAgDEkAA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.MainViewModel">
+    <Position X="15" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>piAAABEwAgAAIAAEEIABIhAACAQIAJgDgJAoIARkCAg=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentCup" />
+      <Property Name="Plan" />
+      <Property Name="PlanCompletion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.PlanCompletionViewModel">
+    <Position X="35" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAACAAAAEACAABAAAAAAABABIAAgAAEEgAA=</HashCode>
+      <FileName>ViewModel\PlanCompletionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlanCompletion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.ProductChoiceViewModel">
+    <Position X="17.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQkAAAABAQAAAAAAACAAECAAAAAAAAAAACAAAAgAAAY=</HashCode>
+      <FileName>ViewModel\ProductChoiceViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MainViewModel" />
+      <Property Name="ProductInDish" />
+      <Property Name="SelectedProduct" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.ProductInDishViewModel">
+    <Position X="12.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAACAABAQAAAAACAAAAiAAAAAAAAQAAAAAAAAABA=</HashCode>
+      <FileName>ViewModel\ProductInDishViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DishViewModel" />
+      <Property Name="ProductInDish" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.ProductListViewModel">
+    <Position X="26" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KQsAAAABAAAAAAAIAAACEAAAAAAAAAAAAAAAAAhAAAQ=</HashCode>
+      <FileName>ViewModel\ProductListViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedProduct" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.ProductViewModel">
+    <Position X="21.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQACAACgAAAAgAAAIAAAEBwAgBgAABAAEAAAAACEAAQ=</HashCode>
+      <FileName>ViewModel\ProductViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Unit" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+      <Property Name="Units" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.ProgressViewModel">
+    <Position X="31.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ProgressViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="PlanCompletions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.UserInfoViewModel">
+    <Position X="29" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAAAAQgACAEAAAECJBECAQggAgAACAgADSIAI=</HashCode>
+      <FileName>ViewModel\UserInfoViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gender" />
+      <Property Name="MainViewModel" />
+      <Property Name="PhysicalActivityType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Genders" />
+      <Property Name="PhysicalActivityTypes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HealthDiary.ViewModel.Templates.BaseViewModel">
+    <Position X="29" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQIAAAAAAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ViewModel\Templates\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HealthDiary.Model.Cup">
+    <Position X="12.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\Cup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Dish">
+    <Position X="12.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAEAAAAAAAAACgAABwAAAAAABAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\Dish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Product">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAAAAAAAAAAICgAEBwAAAAAABAAAAAEAAAEAAA=</HashCode>
+      <FileName>Model\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Unit">
+    <Position X="18.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACQ=</HashCode>
+      <FileName>Model\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.ProductInDish">
+    <Position X="16.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Model\ProductInDish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Plan">
+    <Position X="12.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAAAAAAAAAAAAgABBgAAAAAABAAAAAgAAAEAAA=</HashCode>
+      <FileName>Model\Plan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.PlanCompletion">
+    <Position X="35" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oCADAAAQAAAAAAAAAAAAIBgAAAAAABABABAgAAAEAAA=</HashCode>
+      <FileName>Model\PlanCompletion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Gender">
+    <Position X="25.75" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.PhysicalActivityType">
+    <Position X="25.75" Y="24" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACACAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PhysicalActivityType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="HealthDiary.ViewModel.DishEnergyHandler">
+    <Position X="31.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\DishViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="HealthDiary.ViewModel.ProductListHandler">
+    <Position X="31.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ProductListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

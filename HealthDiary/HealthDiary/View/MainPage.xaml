@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.MainPage" Title="Health Diary" NavigationPage.HasNavigationBar="True">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Command="{Binding OpenSettings_cmd}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout StyleId="mainpage">
+        <Grid StyleClass="menu">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Column="0" Grid.Row="0" Text="Употребить продукт" Command="{Binding EatProduct_cmd}" Style="{DynamicResource buttonFilled}"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="Употребить блюдо" Command="{Binding EatDish_cmd}" Style="{DynamicResource buttonFilled}"/>
+            <Button Grid.Column="0" Grid.Row="1" Text="Выпить воды" Command="{Binding DrinkWater_cmd}" IsEnabled="{Binding IsDrinkWaterEnabled}" Style="{DynamicResource buttonFilled}"/>
+            <Button Grid.Column="1" Grid.Row="1" Text="Прогресс" Command="{Binding OpenProgress_cmd}" Style="{DynamicResource buttonFilled}"/>
+            <Button Grid.Column="0" Grid.Row="2" Text="Список чашек" Command="{Binding OpenCupList_cmd}" Style="{DynamicResource buttonBordered}"/>
+            <Button Grid.Column="1" Grid.Row="2" Text="Список продуктов и блюд" Command="{Binding OpenProductList_cmd}" Style="{DynamicResource buttonBordered}"/>
+            <Label Grid.Column="0" Grid.Row="3" Text="Текущая чашка:" StyleClass="cuplabel"></Label>
+            <Label Grid.Column="0" Grid.Row="3" Text="{Binding CurrentCup.WaterAmount}" StyleClass="cupamount"></Label>
+        </Grid>
+
+        <Frame StyleClass="stats">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Выполнение плана" StyleClass="title"/>
+                    <Frame HasShadow="False" StyleClass="item">
+                        <StackLayout>
+                            <Label Text="Калории:" StyleClass="subtitle"/>
+                            <Label Text="{Binding CaloriesPresentation}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="False" StyleClass="item">
+                        <StackLayout>
+                            <Label Text="Белки:" StyleClass="subtitle"/>
+                            <Label Text="{Binding ProteinsPresentation}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="False" StyleClass="item">
+                        <StackLayout>
+                            <Label Text="Жиры:" StyleClass="subtitle"/>
+                            <Label Text="{Binding FatsPresentation}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="False" StyleClass="item">
+                        <StackLayout>
+                            <Label Text="Углеводы:" StyleClass="subtitle"/>
+                            <Label Text="{Binding CarbohydratesPresentation}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="False" StyleClass="item">
+                        <StackLayout>
+                            <Label Text="Вода:" StyleClass="subtitle"/>
+                            <Label Text="{Binding WaterAmountPresentation}"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+        
+        <!--<Frame BorderColor="Green" CornerRadius="20" Padding="10">
+            <TableView Intent="Data">
+                <TableView.Root>
+                    <TableRoot>
+                        <TableSection Title="Выполнение плана">
+                            <TextCell TextColor="CadetBlue" DetailColor="Black" Text="Калории:"/>
+                            <TextCell Text="{Binding CaloriesPresentation}"/>
+                            <TextCell Text="Белки:"/>
+                            <TextCell Text="{Binding ProteinsPresentation}"/>
+                            <TextCell Text="Жиры:"/>
+                            <TextCell Text="{Binding FatsPresentation}"/>
+                            <TextCell Text="Углеводы:"/>
+                            <TextCell Text="{Binding CarbohydratesPresentation}"/>
+                            <TextCell Text="Вода:"/>
+                            <TextCell Text="{Binding WaterAmountPresentation}"/>
+                        </TableSection>
+                    </TableRoot>
+                </TableView.Root>
+            </TableView>
+        </Frame>-->
+    </StackLayout>
+
+</ContentPage>

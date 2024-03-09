@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.SettingsPage" Title="Настройки">
+
+    <ContentPage.Content>
+        <ScrollView StyleId="settingspage" StyleClass="padded">
+            <StackLayout>
+                <Label Text="Рост:"/>
+                <Entry Text="{Binding Growth}" Placeholder="Рост" Keyboard="Numeric"/>
+                <Label Text="Вес:"/>
+                <Entry Text="{Binding Weight}" Placeholder="Вес" Keyboard="Numeric"/>
+                <Label Text="Дата рождения:"/>
+                <DatePicker MinimumDate="{Binding DateMin}" MaximumDate="{Binding DateMax}" Format="D" Date="{Binding DateOfBirth}"/>
+                <Label Text="Пол:"/>
+                <Picker Title="Выбрать пол" ItemsSource="{Binding Genders}" SelectedItem="{Binding Gender, Mode=TwoWay}" ItemDisplayBinding="{Binding Path=Name}"/>
+                <Label Text="Физическая нагрузка:"/>
+                <Picker Title="Выбрать тип физической нагрузки" ItemsSource="{Binding PhysicalActivityTypes}" SelectedItem="{Binding PhysicalActivityType, Mode=TwoWay}" ItemDisplayBinding="{Binding Path=Name}"/>
+                <Label Text="{Binding PhysicalActivityTypeComment}" HeightRequest="60" StyleClass="comment"/> <!--IsVisible="{Binding IsPhysActTypeCommentVisible}"/>-->
+                <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Сохранить" Command="{Binding ConfirmUpdate_cmd}" IsEnabled="{Binding IsConfirmEnabled}" Style="{DynamicResource buttonFilled}" StyleClass="action"/>
+                <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Выйти из профиля" Command="{Binding Logout_cmd}" Style="{DynamicResource buttonBordered}" StyleClass="action"/>
+                <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Назад" Command="{Binding Back_cmd}" Style="{DynamicResource buttonBordered}" StyleClass="action"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.ProductChoicePage" Style="{DynamicResource contentPagePopup}">
+    <ContentPage.Content>
+        <Frame HorizontalOptions="Center" VerticalOptions="Center" StyleId="product-choice-page" StyleClass="popup">
+            <StackLayout>
+                <Button Text="Назад" Command="{Binding Back_cmd}" Style="{DynamicResource buttonBordered}"/>
+                <!--<Label Text="Поиск по наименованию"/>-->
+                <!--<Entry Text="{Binding SearchInputName}" Keyboard="Chat"/>-->
+                <SearchBar Text="{Binding SearchInputName}" Placeholder="Поиск по наименованию" Keyboard="Chat"/>
+                <ListView x:Name="productList" ItemsSource="{Binding FilteredProducts}"
+            SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" HasUnevenRows="True">
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0" Text="Наименование" Style="{DynamicResource headerListViewSmallLabel}"/>
+                            <Label Grid.Column="1" Grid.Row="0" Text="Кал" Style="{DynamicResource headerListViewSmallLabel}"/>
+                            <Label Grid.Column="2" Grid.Row="0" Text="Бел" Style="{DynamicResource headerListViewSmallLabel}"/>
+                            <Label Grid.Column="3" Grid.Row="0" Text="Жир" Style="{DynamicResource headerListViewSmallLabel}"/>
+                            <Label Grid.Column="4" Grid.Row="0" Text="Угл" Style="{DynamicResource headerListViewSmallLabel}"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <!--<StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}" FontSize="Small" />
+                                        <Label Text="{Binding Calories}" FontSize="Small" />
+                                        <Label Text="{Binding Proteins}" FontSize="Small" />
+                                        <Label Text="{Binding Fats}" FontSize="Small" />
+                                        <Label Text="{Binding Carbohydrates}" FontSize="Small" />
+                                    </StackLayout>-->
+                                    
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding Name}" StyleClass="small"/>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Calories}" StyleClass="small"/>
+                                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding Proteins}" StyleClass="small"/>
+                                        <Label Grid.Column="3" Grid.Row="0" Text="{Binding Fats}" StyleClass="small"/>
+                                        <Label Grid.Column="4" Grid.Row="0" Text="{Binding Carbohydrates}" StyleClass="small"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

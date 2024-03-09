@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="colorGreen">#005F56</Color>
+            <Color x:Key="colorGreenDisabled">#718F8C</Color>
+            <Color x:Key="colorDarkGreen">#01453E</Color>
+            <Color x:Key="colorDarkGreenDisabled">#4E5E5D</Color>
+            <Color x:Key="colorMint">#CFFFCF</Color>
+            <Color x:Key="colorMintDisabled">#EBFCEB</Color>
+            <Color x:Key="colorRed">#FF7F7F</Color>
+            <Color x:Key="colorDarkRed">#7F3F3F</Color>
+            <Color x:Key="colorTransparent">#70000000</Color>
+
+            <Style x:Key="tabbedPageTabs" TargetType="TabbedPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource colorGreen}"/>
+                <Setter Property="SelectedTabColor" Value="{DynamicResource colorMint}"/>
+                <Setter Property="UnselectedTabColor" Value="{DynamicResource colorGreenDisabled}"/>
+            </Style>
+
+            <Style x:Key="contentPagePopup" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#70000000"/>
+            </Style>
+
+            <Style x:Key="label" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{DynamicResource colorGreen}"/>
+            </Style>
+
+            <Style x:Key="entry" TargetType="Entry">
+                <Setter Property="TextColor" Value="{DynamicResource colorGreen}"/>
+                <Setter Property="PlaceholderColor" Value="{DynamicResource colorGreenDisabled}"/>
+            </Style>
+
+            <Style x:Key="editor" TargetType="Editor">
+                <Setter Property="AutoSize" Value="TextChanges"/>
+                <Setter Property="TextColor" Value="{DynamicResource colorGreen}"/>
+                <Setter Property="PlaceholderColor" Value="{DynamicResource colorGreenDisabled}"/>
+            </Style>
+
+            <Style x:Key="buttonFilled" TargetType="Button">
+                <Style.Triggers>
+                    <Trigger Property="Button.IsEnabled" Value="False" TargetType="Button">
+                        <Setter Property="TextColor" Value="{DynamicResource colorMintDisabled}" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource colorGreenDisabled}" />
+                        <Setter Property="BorderColor" Value="{DynamicResource colorDarkGreenDisabled}" />
+                    </Trigger>
+                </Style.Triggers>
+                <Setter Property="TextColor" Value="{DynamicResource colorMint}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource colorGreen}" />
+                <Setter Property="BorderColor" Value="{DynamicResource colorDarkGreen}" />
+            </Style>
+
+            <Style x:Key="buttonBordered" TargetType="Button">
+                <Style.Triggers>
+                    <Trigger Property="Button.IsEnabled" Value="False" TargetType="Button">
+                        <Setter Property="TextColor" Value="{DynamicResource colorGreenDisabled}" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource colorMintDisabled}" />
+                        <Setter Property="BorderColor" Value="{DynamicResource colorGreenDisabled}" />
+                    </Trigger>
+                </Style.Triggers>
+                <Setter Property="TextColor" Value="{DynamicResource colorGreen}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource colorMint}" />
+                <Setter Property="BorderColor" Value="{DynamicResource colorGreen}" />
+            </Style>
+            
+            <Style x:Key="buttonBorderedRed" TargetType="Button">
+                <!--<Style.Triggers>
+                    <Trigger Property="Button.IsEnabled" Value="False" TargetType="Button">
+                        <Setter Property="TextColor" Value="{DynamicResource colorMintDisabled}" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource colorGreenDisabled}" />
+                        <Setter Property="BorderColor" Value="{DynamicResource colorDarkGreenDisabled}" />
+                    </Trigger>
+                </Style.Triggers>-->
+                <Setter Property="TextColor" Value="{DynamicResource colorDarkRed}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource colorRed}" />
+                <Setter Property="BorderColor" Value="{DynamicResource colorDarkRed}" />
+            </Style>
+
+            <Style x:Key="headerListViewFilledFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource colorGreen}"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+            <Style x:Key="headerListViewFilledLabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="{DynamicResource colorMint}"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="headerListViewSmallLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource colorGreenDisabled}"/>
+            </Style>
+
+            <Style x:Key="headerListViewSmallLabelCentered" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource colorGreenDisabled}"/>
+                <Setter Property="HorizontalOptions" Value= "Center"/>
+            </Style>
+
+            <!--LIST VIEW DISH PAGE-->
+            <Style x:Key="dishPageStackLayout" TargetType="StackLayout">
+                <Setter Property="Margin" Value="10,0,10,0"/>
+            </Style>
+
+            <Style x:Key="dishPageGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="10,0,10,0"/>
+            </Style>
+            <Style x:Key="dishPageFooterGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="0,20,0,0"/>
+            </Style>
+
+            <Style x:Key="dishPageLabelCentered" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="dishPageLabelMargined" TargetType="Label">
+                <Setter Property="Margin" Value="0,10,0,10"/>
+            </Style>
+            <Style x:Key="dishPageLabelCenteredMargined" TargetType="Label" BasedOn="{StaticResource label}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0,10,0,10"/>
+            </Style>
+
+            <Style x:Key="dishPageButtonItem" TargetType="Button" BasedOn="{StaticResource buttonBordered}">
+                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style x:Key="dishPageButtonDeleteItem" TargetType="Button" BasedOn="{StaticResource buttonBorderedRed}">
+                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style x:Key="dishPageButtonAdd" TargetType="Button" BasedOn="{StaticResource buttonFilled}">
+                <Setter Property="Margin" Value="0,10,0,20"/>
+            </Style>
+            <Style x:Key="dishPageButtonFilled" TargetType="Button" BasedOn="{StaticResource buttonFilled}">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="CornerRadius" Value="90"/>
+                <Setter Property="BorderWidth" Value="3"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="dishPageButtonBordered" TargetType="Button" BasedOn="{StaticResource buttonBordered}">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="CornerRadius" Value="90"/>
+                <Setter Property="BorderWidth" Value="3"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <!--END OF LIST VIEW DISH PAGE-->
+        </ResourceDictionary>
+
+        <StyleSheet Source="Resources/common.css"/>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.ProgressPage" Title="Статистика" NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <StackLayout StyleId="progresspage">
+            <!--<Button Text="Назад" Command="{Binding Back_cmd}" Style="{DynamicResource buttonBordered}"/>-->
+            <Frame StyleClass="list">
+                <StackLayout>
+                    <Frame StyleClass="header">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0" Text="Кал"/>
+                            <Label Grid.Column="1" Grid.Row="0" Text="Бел"/>
+                            <Label Grid.Column="2" Grid.Row="0" Text="Жир"/>
+                            <Label Grid.Column="3" Grid.Row="0" Text="Угл"/>
+                            <Label Grid.Column="4" Grid.Row="0" Text="Водa"/>
+                        </Grid>
+                    </Frame>
+
+                    <ListView ItemsSource="{Binding PlanCompletions}" HasUnevenRows="True" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Frame StyleClass="item">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="25"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Frame Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" HasShadow="False" StyleClass="subheader">
+                                                    <Label Text="{Binding Date}"/>
+                                                </Frame>
+
+                                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Calories}"/>
+                                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Proteins}"/>
+                                                <Label Grid.Column="2" Grid.Row="1" Text="{Binding Fats}"/>
+                                                <Label Grid.Column="3" Grid.Row="1" Text="{Binding Carbohydrates}"/>
+                                                <Label Grid.Column="4" Grid.Row="1" Text="{Binding WaterAmount}"/>
+
+                                                <Label Grid.Column="0" Grid.Row="2" Text="{Binding CaloriesPercent}"/>
+                                                <Label Grid.Column="1" Grid.Row="2" Text="{Binding ProteinsPercent}"/>
+                                                <Label Grid.Column="2" Grid.Row="2" Text="{Binding FatsPercent}"/>
+                                                <Label Grid.Column="3" Grid.Row="2" Text="{Binding CarbohydratesPercent}"/>
+                                                <Label Grid.Column="4" Grid.Row="2" Text="{Binding WaterAmountPercent}"/>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

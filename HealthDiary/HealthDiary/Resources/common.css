@@ -1,0 +1,244 @@
+﻿/*
+    #005F56 green
+    #718F8C green disabled
+    #01453E dark green
+    #4E5E5D dark green disabled
+    #CFFFCF mint
+    #EBFCEB mint disabled
+    #003399 blue
+    #FF7F7F red
+    #7F3F3F dark red
+    #70000000 transparent
+*/
+
+navigationpage, tabbedpage {
+    -xf-bar-text-color: #CFFFCF;
+    -xf-bar-background-color: #005F56;
+}
+
+.centered {
+    align-self: center;
+    text-align: center;
+    vertical-align: center;
+}
+
+stacklayout.padded {
+    padding: 30;
+}
+
+scrollview.padded {
+    padding: 30;
+}
+
+frame.popup {
+    height: 450;
+    width: 300;
+    border-radius: 5;
+}
+
+frame.loading {
+    background-color: #005F56;
+    border-radius: 90;
+}
+
+frame.loading label {
+    color: #CFFFCF;
+}
+
+button {
+    border-radius: 90;
+    border-width: 3;
+    font-style: bold;
+}
+
+button.itemlist {
+    border-radius: 5;
+    border-width: 1;
+}
+
+button.filled {
+    /*color: #CFFFCF;
+    background-color: #005F56;
+    border-color: #01453E;*/
+}
+
+button.bordered {
+    /*color: #005F56;
+    background-color: #CFFFCF;
+    border-color: #005F56;*/
+}
+
+button.link {
+    color: #003399;
+    font-style: normal;
+    background: transparent;
+}
+
+label {
+    color: #005F56;
+}
+
+entry, datepicker, picker, searchbar {
+    -xf-placeholder-color: #718F8C;
+    color: #005F56;
+}
+
+#loginpage .input {
+    padding: 0 0 30 0;
+}
+
+#loginpage .input label, #userinfopage label, #product-page label {
+    font-size: medium;
+    font-style: bold;
+}
+
+#loginpage label.centered {
+    padding: 50 0 0 0;
+}
+
+#loginpage button.action, #userinfopage button.action, #settingspage button.action {
+    width: 200;
+}
+
+#userinfopage label.comment, #settingspage label.comment {
+    color: #718F8C;
+    font-style: normal;
+    font-size: small;
+    margin: 0 0 30 0;
+}
+
+#mainpage, #progresspage {
+    padding: 10;
+}
+
+#mainpage .menu {
+    padding: 0 0 10 0;
+}
+
+#mainpage .menu label.cuplabel {
+    text-align: start;
+    padding: 0 0 0 20;
+}
+
+#mainpage .menu label.cupamount {
+    text-align: end;
+    padding: 0 10 0 0;
+}
+
+#mainpage button {
+    font-size: micro;
+    border-width: 2;
+    padding: 10;
+}
+
+#mainpage frame.stats {
+    padding: 20;
+    border-radius: 5;
+}
+
+#mainpage frame.stats label {
+    text-align: center;
+}
+
+#mainpage frame.stats label.title {
+    font-size: medium;
+    font-style: bold;
+}
+
+#mainpage frame.stats label.subtitle {
+    font-size: body;
+}
+
+#mainpage frame.stats frame.item {
+    margin: 10 10 0 10;
+    padding: 5;
+    border-color: #005F56;
+    border-radius: 5;
+}
+
+#mainpage frame.stats frame.item stacklayout {
+    padding: 0;
+}
+
+#progresspage frame.list {
+    padding: 10;
+    border-radius: 5;
+}
+
+#progresspage frame.list frame.item {
+    padding: 10;
+    margin: 5 0 0 0;
+    border-radius: 5;
+}
+
+#progresspage frame.list frame.item label {
+    vertical-align: center;
+    text-align: center;
+}
+
+#progresspage frame.list frame.item frame.subheader {
+    padding: 0;
+    margin: 0;
+    border-radius: 5;
+    background-color: #CFFFCF;
+}
+
+#progresspage frame.list frame.item frame.subheader label {
+    vertical-align: center;
+    text-align: center;
+    color: #005F56;
+}
+
+#product-choice-page label.small, #dish-choice-page label.small {
+    font-size: small;
+}
+
+#cup-list-page button {
+    margin: 0 0 10 0;
+}
+
+#cup-list-page label.medium {
+    font-size: medium;
+    font-style: bold;
+    padding: 5 0 5 0;
+}
+
+#product-list-page label.small, #dish-list-page label.small {
+    font-size: small;
+}
+
+#product-list-page label.medium, #dish-list-page label.medium {
+    font-size: body;
+}
+
+#product-page grid.buttons {
+    margin: 20 0 0 0;
+}
+
+#product-page grid.buttons button {
+    padding: 5;
+    font-size: small;
+}
+
+#dish-page {
+    padding: 10 10 20 10;
+}
+
+#dish-page frame.header, #progresspage frame.header {
+    padding: 5;
+    margin: 0 0 10 0;
+    background-color: #005F56;
+    border-radius: 5;
+}
+
+#progresspage frame.header {
+    padding: 10;
+}
+
+#dish-page frame.header label, #progresspage frame.header label {
+    vertical-align: center;
+    text-align: center;
+    color: #CFFFCF;
+    font-size: small;
+    font-style: bold;
+}

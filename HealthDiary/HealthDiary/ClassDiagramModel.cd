@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HealthDiary.Model.Cup">
+    <Position X="29" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\Cup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.Dish">
+    <Position X="26.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAEAAAAAAAAACgAABwAAAAAABAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\Dish.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.Gender">
+    <Position X="31.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.PhysicalActivityType">
+    <Position X="31.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACACAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PhysicalActivityType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Plan">
+    <Position X="34" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAAAAAAAAAAAAgABBgAAAAAABAAAAAgAAAEAAA=</HashCode>
+      <FileName>Model\Plan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.PlanCompletion">
+    <Position X="34" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oCADAAAQAAAAAAAAAAAAIBgAAAAAABABABAgAAAEAAA=</HashCode>
+      <FileName>Model\PlanCompletion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.Product">
+    <Position X="26.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAAAAAAAAAAICgAEBwAAAAAABAAAAAEAAAEAAA=</HashCode>
+      <FileName>Model\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Unit" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.ProductInDish">
+    <Position X="24.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Model\ProductInDish.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Dish" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.Unit">
+    <Position X="24.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACQ=</HashCode>
+      <FileName>Model\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.User">
+    <Position X="30" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCgAAAAAQAACAEAQAAAAAACAQkAgDAAAQACAAAAQ=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gender" />
+      <Property Name="PhysicalActivityType" />
+      <Property Name="Plan" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HealthDiary.Model.Context.ApplicationContext">
+    <Position X="21.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACCAAAQAIAAIAECQAAABAEAAAgAAAEAAAAAAAAAQ=</HashCode>
+      <FileName>Model\Context\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Extensions.DoubleExtensions">
+    <Position X="42" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Model\Extensions\DoubleExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Model.Services.HttpSynchronizer">
+    <Position X="42" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAACQAAAAgAAAAAAAAAQAAACAAAAAAAAAIAAE=</HashCode>
+      <FileName>Model\Services\HttpSynchronizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.Services.NotyScheduleService">
+    <Position X="40.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgABAAJAACAAQAAIAAkAOwAAEAEAQEECgEAACiBAAI=</HashCode>
+      <FileName>Services\NotyScheduleService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthDiary.App">
+    <Position X="36.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAChAALgCIQgAEAgBAAQAAAAAAQiIACgQAQBABAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentUser" />
+      <Property Name="NotyScheduleService" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="HealthDiary.Model.Services.SynchronizerResponse">
+    <Position X="42" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQAgAAAAAAAABAAAAAAAAgQAAAAAAEAAIAEAAAA=</HashCode>
+      <FileName>Model\Services\HttpSynchronizer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="HealthDiary.ToastMessageHandler" Collapsed="true">
+    <Position X="36.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

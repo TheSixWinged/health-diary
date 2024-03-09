@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.UserInfoPage" Title="Данные о пользователе" NavigationPage.HasBackButton="False">
+    
+    <ContentPage.Content>
+        <ScrollView StyleId="userinfopage" StyleClass="padded">
+            <StackLayout>
+                <Label Text="Рост:"/>
+                <Entry Text="{Binding Growth}" Placeholder="Рост" Keyboard="Numeric"/>
+                <Label Text="Вес:"/>
+                <Entry Text="{Binding Weight}" Placeholder="Вес" Keyboard="Numeric"/>
+                <Label Text="Дата рождения:"/>
+                <DatePicker MinimumDate="{Binding DateMin}" MaximumDate="{Binding DateMax}" Format="D" Date="{Binding DateOfBirth}"/>
+                <Label Text="Пол:"/>
+                <Picker Title="Выбрать пол" ItemsSource="{Binding Genders}" SelectedItem="{Binding Gender, Mode=TwoWay}" ItemDisplayBinding="{Binding Path=Name}"/>
+                <Label Text="Физическая нагрузка:"/>
+                <Picker Title="Выбрать тип физической нагрузки" ItemsSource="{Binding PhysicalActivityTypes}" SelectedItem="{Binding PhysicalActivityType, Mode=TwoWay}" ItemDisplayBinding="{Binding Path=Name}"/>
+                <Label Text="{Binding PhysicalActivityTypeComment}" IsVisible="{Binding IsPhysActTypeCommentVisible}" StyleClass="comment"/>
+                <Label Text="Описание типа нагрузки" IsVisible="{Binding IsPhysActTypeCommentHide}" StyleClass="comment"/>
+                <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Подтвердить" Command="{Binding Confirm_cmd}" IsEnabled="{Binding IsConfirmEnabled}" Style="{DynamicResource buttonFilled}" StyleClass="action"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

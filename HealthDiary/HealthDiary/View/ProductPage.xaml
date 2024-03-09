@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.ProductPage" Title="Информация о продукте">
+    <ContentPage.Content>
+        <ScrollView StyleId="product-page" StyleClass="padded">
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Наименование:"/>
+                    <Entry Text="{Binding Name}" Keyboard="Chat"/>
+                    <Label Text="Калории:"/>
+                    <Entry Text="{Binding Calories}" Keyboard="Text"/>
+                    <Label Text="Белки:"/>
+                    <Entry Text="{Binding Proteins}" Keyboard="Text"/>
+                    <Label Text="Жиры:"/>
+                    <Entry Text="{Binding Fats}" Keyboard="Text"/>
+                    <Label Text="Углеводы:"/>
+                    <Entry Text="{Binding Carbohydrates}" Keyboard="Text"/>
+                    <Label Text="Мера:"/>
+                    <Picker Title="Выбрать меру" ItemsSource="{Binding Units}" SelectedItem="{Binding Unit, Mode=TwoWay}" ItemDisplayBinding="{Binding Path=AmountName}"/>
+
+                    <Grid StyleClass="buttons">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Column="0" Grid.Row="0" Text="Сохранить" Command="{Binding SaveProduct_cmd}" IsEnabled="{Binding IsConfirmEnabled}" Style="{DynamicResource buttonFilled}"/>
+                        <Button Grid.Column="1" Grid.Row="0" Text="Удалить" Command="{Binding DeleteProduct_cmd}" Style="{DynamicResource buttonFilled}"/>
+                        <Button Grid.Column="2" Grid.Row="0" Text="Назад" Command="{Binding Back_cmd}" Style="{DynamicResource buttonBordered}"/>
+                    </Grid>
+                </StackLayout>
+                <!--<ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Button Text="Сохранить" Command="{Binding SaveProduct_cmd}" IsEnabled="{Binding IsConfirmEnabled}"/>
+                        <Button Text="Удалить" Command="{Binding DeleteProduct_cmd}"/>
+                        <Button Text="Назад" Command="{Binding Back_cmd}" />
+                    </StackLayout>
+                </ScrollView>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

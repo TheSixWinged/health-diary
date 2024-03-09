@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthDiary.View.LoadingPage">
+    
+    <ContentPage.Content>
+        <Frame HorizontalOptions="Center" VerticalOptions="Center" StyleClass="loading">
+            <Label Text="Синхронизация данных"/>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
